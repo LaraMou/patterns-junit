@@ -6,14 +6,14 @@ public class Main {
 
         String carType = "electric";
 
-        ICar car;
-        if ("car" == carType) {
-            car = new Car();
-        } else if ("electric" == carType) {
-            car = new ElectricCar();
+        if(carType.equals("car")){
+            new Car();
+        } else if (carType.equals("electric")){
+            new ElectricCar();
+
         }else{
             throw new RuntimeException("Invalid car");
         }
-        car.accelerate();
+
     }
 }
