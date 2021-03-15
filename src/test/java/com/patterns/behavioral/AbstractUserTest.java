@@ -33,7 +33,7 @@ class AbstractUserTest {
     @Test
     @DisplayName("comprobando user1 instanceof AbstractUser ")
     void test3() {
-        assertTrue(user1 instanceof AbstractUser);
+        assertTrue(null != user1);
     }
 
     @Test
@@ -46,10 +46,14 @@ class AbstractUserTest {
     @DisplayName("comprobando recibe el mensaje ")
     @Disabled("FIX - mediator tests")
     void test5() {
+
         String hola = "Hola buenas!";
-        user1.receive(hola);
-        chat.sendMessage(hola,user1);
-        user1.receive(hola);
+
+        user1.send(hola);
+        chat.sendMessage(hola,user2);
+        assertNotEquals(user1,user2);
+
+
 
 
     }
