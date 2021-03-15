@@ -24,14 +24,10 @@ public class Circle extends Shape{
         return Math.PI*radio*radio;
     }
 
-//    public Circle clone() throws CloneNotSupportedException {
-//        return (Circle) super.clone();
-//    }
-    public Circle(Circle cir){
-
-        this.radio = cir.radio;
-
+    public Circle clone() throws CloneNotSupportedException {
+        return (Circle) super.clone();
     }
+
 
     @Override
     public String toString() {
