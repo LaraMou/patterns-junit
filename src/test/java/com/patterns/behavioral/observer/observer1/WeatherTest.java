@@ -5,23 +5,24 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class WeatherTest {
-    private WeatherType currentWeather;
-    private List<WeatherObserver> observers;
+    private List<WeatherObserver> weatherObservers;
 
-    @Test
     @BeforeEach
     void comienzo(){
-        System.out.println("comienzo");
         //para crear los casos de test por cada llamada se limpiará la lista de observadores
-        observers = new ArrayList<>();
-
+        weatherObservers = new ArrayList<>();
         WeatherObserver computer = new Computer();
         WeatherObserver smartphone = new Smartphone();
+        assertTrue(computer instanceof  WeatherObserver);
+        assertTrue(computer instanceof Computer);
+        assertTrue(smartphone instanceof WeatherObserver);
+        assertTrue(smartphone instanceof Smartphone);
     }
     @Test
     @DisplayName("Instancia Weather con lista vacia")
@@ -39,43 +40,46 @@ class WeatherTest {
     @Test
     @DisplayName("Añadir Observador")
     void addObserver() {
-        int size = 0;
+        Computer computer = new Computer();
+        Weather weather = new Weather();
+        weather.addObserver(computer);
 
-        WeatherObserver computer = new Computer();
-        WeatherObserver smartphone = new Smartphone();
-        observers.add(computer);
-        assertTrue(observers.size()>0);
-        size = observers.size();
-        observers.add(smartphone);
+        //si están añadidos se puede notificar
+        weather.changeWeather(WeatherType.CLOUDY);
+        List<String> messages = computer.getReceivedMessages();
+        computer.setReceivedMessages(messages);
+        assertFalse(computer.getReceivedMessages().contains("Computer has been notified of weather change: " + WeatherType.SUNNY));
 
-        for (WeatherObserver observer:this.observers){
-            assertNotEquals(size,observers.size());
-
-        }
     }
 
     @Test
     @DisplayName("Eliminar Observador")
     void removeObserver() {
-        observers = new ArrayList<>();
-        WeatherObserver computer = new Computer();
-        WeatherObserver smartphone = new Smartphone();
-        observers.add(computer);
-        observers.add(smartphone);
-        int count = observers.size();
+        int size = 0;
+        Weather weather = new Weather();
+        Computer computer = new Computer();
+        weather.addObserver(computer);
+        weather.changeWeather(WeatherType.CLOUDY);
+        assertTrue(computer.getReceivedMessages().contains("Computer has been notified of weather change: " +WeatherType.CLOUDY));
+        weather.removeObserver(computer);
+        weather.changeWeather(WeatherType.RAINY);
+        assertFalse(computer.getReceivedMessages().contains("Computer has been notified of weather change: " +WeatherType.RAINY));
 
-        observers.remove(computer);
-        int count2 = observers.size();
-        assertNotEquals(count,count2);
+
+
     }
 
     @Test
     @DisplayName("cambiar el tiempo")//parametros
     void changeWeather() {
-        WeatherType type = WeatherType.RAINY;
-        WeatherObserver computer = new Computer();
-        computer.update(type);
-
+        Weather weather = new Weather();
+        Computer computer = new Computer();
+        computer.update(WeatherType.RAINY);
+        assertTrue(computer.getReceivedMessages().contains("Computer has been notified of weather change: " +WeatherType.RAINY));
+        weather.addObserver(computer);
+        weather.changeWeather(WeatherType.CLOUDY);
+        weather.addObserver(computer);
+        assertTrue(computer.getReceivedMessages().contains("Computer has been notified of weather change: " +WeatherType.CLOUDY));
 
 
     }

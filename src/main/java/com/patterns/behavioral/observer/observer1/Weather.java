@@ -13,12 +13,10 @@ public class Weather {
     }
 
     public void addObserver(WeatherObserver obs){
-        System.out.println("Añadido obs");
         this.observers.add(obs);
     }
 
     public void removeObserver(WeatherObserver obs){
-        System.out.println("Añadido obs");
         this.observers.remove(obs);
     }
 
