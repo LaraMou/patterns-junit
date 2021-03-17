@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import com.patterns.behavioral.state.state2.Device;
 import com.patterns.behavioral.state.state2.Off;
 import com.patterns.behavioral.state.state2.On;
+import static org.junit.jupiter.api.Assertions.*;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -54,7 +55,10 @@ public class State2Test {
     void testPress(){
         Device device = new Device(new Off());
         device.setState(new On());
+        assertTrue(device.getState() instanceof On);
         device.pressButton();
+
+        assertTrue(device.getState() instanceof Off);
     }
 
 }
