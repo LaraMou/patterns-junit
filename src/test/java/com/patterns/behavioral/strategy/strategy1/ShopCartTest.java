@@ -8,9 +8,19 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ShopCartTest {
 
+    ShopCart trolley;
     @BeforeEach
     void setUp() {
-        ShopCart trolley = new ShopCart();
+         trolley = new ShopCart();
+    }
+
+    @Test
+    @DisplayName("TestNotNull")
+    void testNotNull()
+    {
+
+        assertNotNull(trolley);
+
     }
 
 
