@@ -15,6 +15,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -55,11 +56,11 @@ class BookShopTest {
     @DisplayName("addBookNull")
     public void addBookNull() {
 
-        book = null;
-       // verify(bookShop).addBook(bookArgumentCaptor.capture());
 
-        //assertEquals(null, bookArgumentCaptor.getValue());
+        bookShop.addBook(book);
 
+      Optional<Book> bookOptional = bookShop.getOne(0);
+        assertTrue(bookOptional.isEmpty());
     }
 
 
