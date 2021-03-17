@@ -1,12 +1,12 @@
 package com.patterns.behavioral.iterator.iterator1;
 
 
-
 import org.junit.jupiter.api.Tag;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
-import  java.util.logging.Level;
 
 @Tag("database")// Es una etiqueta para que en la clase SuiteTest podamos definir que se ejecuten las clases
                 // o métodos que queramos seleccionandolos por etiqueta "@Tag"
@@ -33,11 +33,13 @@ public class BookShop implements IBookShop{
 
     // metodo que devuelve el tamaño de la librería
     public int getSize() {
-       Logger log = Logger.getLogger("getSize(): " + books.size());
+       Logger log = Logger.getLogger(BookShop.class.getName());
+       String message ="getSize():" + books.size();
+        log.log(Level.INFO, message);
 
-        //System.out.println("getSize(): " + books.size());
         return books.size();
     }
+
 
     // iterador para recuperar elementos de la estructura interna
     @Override
@@ -52,16 +54,13 @@ public class BookShop implements IBookShop{
 
         @Override
         public boolean hasNext() {
-            if (this.currentIndex >= books.size())
-                return false;
-
-            return true;
+            return this.currentIndex < books.size();
         }
 
         @Override
         public Object next() {
 
-            if(books.size() == 0)
+            if(books.isEmpty())
                 return false;
 
             return books.get(currentIndex++);
