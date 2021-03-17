@@ -23,14 +23,14 @@ class BorderStyleDecoratorTest {
 
     }
 
-    @Ignore("Falta implementación")
-    @Test
-    void resize() {
-        Shape decoratedShape = new Circle();
-        decoratedShape.resize();
-        fail();
-
-    }
+//    @Ignore("Falta implementación")
+//    @Test
+//    void resize() {
+//        Shape decoratedShape = new Circle();
+//        decoratedShape.resize();
+//
+//
+//    }
 
     @Test
     void description() {

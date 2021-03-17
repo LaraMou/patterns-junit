@@ -1,10 +1,10 @@
 
-E
-java:S1481"*Remove this unused "user4" local variable.(ομµϊÿÿÿÿ
-E
-java:S1481"*Remove this unused "user3" local variable.(Ιπƒόÿÿÿÿ
-N	java:S106"9Replace this use of System.out or System.err by a logger.(Υρ‚—
-T
-java:S1854"9Remove this useless assignment to local variable "user4".(ομµϊÿÿÿÿ
 T
 java:S1854"9Remove this useless assignment to local variable "user3".(Ιπƒόÿÿÿÿ
+E
+java:S1481"*Remove this unused "user4" local variable.(ομµϊÿÿÿÿ
+T
+java:S1854"9Remove this useless assignment to local variable "user4".(ομµϊÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(Υρ‚—
+E
+java:S1481"*Remove this unused "user3" local variable.(Ιπƒόÿÿÿÿ
