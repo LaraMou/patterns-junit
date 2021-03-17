@@ -48,7 +48,7 @@ public class BookShop implements IBookShop {
     }
 
     // crear iterador
-    private class BookShopIterator implements CustomIterator {
+    public class BookShopIterator implements CustomIterator {
 
         int currentIndex = 0;
 

@@ -102,23 +102,22 @@ class BookShopTest {
     @Test
     @DisplayName("iterator")
     void iterator() {
-/*
-        // 1 Configurar mocks
-      //  when(bookShop.iterator()).thenReturn(CustomIterator iterator);
+//        // 1 Configurar mocks
+//
+//        when(bookShop.iterator()).thenReturn(CustomIterator iterator);
+//
+//        // 2 - Probar el SUT
+//        assertTrue(bookShop.iterator() instanceof CustomIterator);
+//
+//        // 3 - Verificar datos y mock
+//        verify(bookShop, times(1)).iterator();
 
-        // 2 - Probar el SUT
-        assertTrue(bookShop.iterator() instanceof CustomIterator);
-
-        // 3 - Verificar datos y mock
-        verify(bookShop, times(1)).iterator();
-
- */
     }
 
     @Test
+    @Disabled("Hasta nuevo aviso")
     @DisplayName("iteratorHasNext")
     public void iteratorHasNext() {
-
 
 
 
