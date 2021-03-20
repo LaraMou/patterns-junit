@@ -30,8 +30,11 @@ public class Rectangle extends Shape{
     }
 
     // método clone()
-    public Rectangle clone() throws CloneNotSupportedException {
-        return (Rectangle) super.clone();
+    public Rectangle (Rectangle rectclone) {
+       this.setHeight(rectclone.getHeight());
+       this.setWidth(rectclone.getWidth());
+       this.setColor(rectclone.getColor());
+
     }
 
     // método area()

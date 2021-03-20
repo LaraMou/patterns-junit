@@ -66,8 +66,7 @@ class BookShopTest {
 
     @Test
     @DisplayName("getSizeBookShop")
-    @Disabled("")
-    void getSizeBookShop() {
+     void getSizeBookShop() {
         // 1 Configurar mocks
         when(bookShop.getSize()).thenReturn(1);
 
@@ -99,27 +98,28 @@ class BookShopTest {
        // verify(bookShop, times(1)).addBook(new Book("1254265", "Martins", 2021 ));
     }
 
-    @Test
-    @DisplayName("iterator")
-    void iterator() {
-//        // 1 Configurar mocks
+//    @Test
+//    @DisplayName("iterator")
+//    void iterator() {
 //
-//        when(bookShop.iterator()).thenReturn(CustomIterator iterator);
+////        // 1 Configurar mocks
+////
+////        when(bookShop.iterator()).thenReturn(CustomIterator iterator);
+////
+////        // 2 - Probar el SUT
+////        assertTrue(bookShop.iterator() instanceof CustomIterator);
+////
+////        // 3 - Verificar datos y mock
+////        verify(bookShop, times(1)).iterator();
+
+//    }
+
+//    @Test
+//    @Disabled("Hasta nuevo aviso")
+//    @DisplayName("iteratorHasNext")
+//    public void iteratorHasNext() {
 //
-//        // 2 - Probar el SUT
-//        assertTrue(bookShop.iterator() instanceof CustomIterator);
 //
-//        // 3 - Verificar datos y mock
-//        verify(bookShop, times(1)).iterator();
-
-    }
-
-    @Test
-    @Disabled("Hasta nuevo aviso")
-    @DisplayName("iteratorHasNext")
-    public void iteratorHasNext() {
-
-
-
-    }
+//
+//    }
 }

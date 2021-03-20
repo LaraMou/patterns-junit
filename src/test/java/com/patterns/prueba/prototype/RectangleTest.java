@@ -17,9 +17,9 @@ public class RectangleTest {
 
     @Test
     @DisplayName("Clone")
-    void testClone() throws CloneNotSupportedException {
+    void testClone(){
         Rectangle rect = new Rectangle("rojo", 100,100);
-        Rectangle rectClonado = rect.clone();
+        Rectangle rectClonado = new Rectangle(rect);
 
         assertNotEquals(rect, rectClonado);
 

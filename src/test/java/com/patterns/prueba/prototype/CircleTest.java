@@ -18,9 +18,9 @@ public class CircleTest {
 
     @Test
     @DisplayName("Clone")
-    void testClone() throws CloneNotSupportedException{
+    void testClone() {
         Circle circle =  new Circle("amarillo", 2.0);
-        Circle circleClonado = circle.clone();
+        Circle circleClonado = new Circle(circle);
 
         assertNotEquals(circle, circleClonado);
 

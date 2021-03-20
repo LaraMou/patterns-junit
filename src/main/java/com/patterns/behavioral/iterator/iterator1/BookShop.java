@@ -1,16 +1,17 @@
 package com.patterns.behavioral.iterator.iterator1;
-
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Tag;
+
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 @Tag("database")// Es una etiqueta para que en la clase SuiteTest podamos definir que se ejecuten las clases
                 // o métodos que queramos seleccionandolos por etiqueta "@Tag"
 public class BookShop implements IBookShop{
+    private final Logger log = LogManager.getLogger(BookShop.class);
 
     // estructura datos interna
     List<Book> books;
@@ -33,10 +34,8 @@ public class BookShop implements IBookShop{
 
     // metodo que devuelve el tamaño de la librería
     public int getSize() {
-       Logger log = Logger.getLogger(BookShop.class.getName());
-       String message ="getSize():" + books.size();
-        log.log(Level.INFO, message);
-
+        String message = "getSize()" + books.size();
+        log.debug(message);
         return books.size();
     }
 

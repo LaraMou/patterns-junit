@@ -38,6 +38,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\pom.xml">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\src\main\java\com\patterns\behavioral\iterator\iterator1\BookShop.java">
           <value>
             <Attribute>

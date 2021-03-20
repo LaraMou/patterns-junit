@@ -24,9 +24,12 @@ public class Circle extends Shape{
         return Math.PI*radio*radio;
     }
 
-    public Circle clone() throws CloneNotSupportedException {
-        return (Circle) super.clone();
+
+    public Circle (Circle circleclone){
+        this.setRadio(circleclone.getRadio());
+        this.setColor(circleclone.getColor());
     }
+
 
 
     @Override
