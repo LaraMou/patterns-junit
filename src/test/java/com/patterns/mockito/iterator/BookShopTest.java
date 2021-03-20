@@ -74,7 +74,7 @@ class BookShopTest {
 
         bookShop.addBook(new Book("5656435", "Hawkins", 2021 ));
         bookShop.addBook(new Book("1254265", "Martins", 2021 ));
-        assertEquals(2, bookShop.getSize());
+        assertEquals(1, bookShop.getSize());
 
         // 3 - Verificar datos y mock
         verify(bookShop, times(1)).getSize();
